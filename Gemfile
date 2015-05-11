@@ -36,6 +36,14 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-bootstrap'
+  gem 'rails-assets-angular'
+end
+
+
+
+
 # Font Awesome
 gem "font-awesome-rails"
 

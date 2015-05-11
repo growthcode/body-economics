@@ -4,6 +4,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.integer :weight, null: false, default: 200
+      t.integer :goal_weight, null: false, default: 180
+      t.integer :max_calories, null: false, default: 1600
 
       ## Recoverable
       t.string   :reset_password_token
@@ -36,6 +39,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
+    add_index :users, :weight
+    add_index :users, :goal_weight
+    add_index :users, :max_calories
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
   end

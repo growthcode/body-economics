@@ -11,18 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511015333) do
+ActiveRecord::Schema.define(version: 20150511055016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "day", force: true do |t|
+    t.integer  "score",      default: 0, null: false
+    t.string   "exercise"
+    t.integer  "weight"
+    t.date     "the_date"
+    t.text     "note"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",   null: false
+    t.string   "encrypted_password",     default: "",   null: false
+    t.integer  "weight",                 default: 200,  null: false
+    t.integer  "goal_weight",            default: 180,  null: false
+    t.integer  "max_calories",           default: 1600, null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,    null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
@@ -32,6 +46,9 @@ ActiveRecord::Schema.define(version: 20150511015333) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["goal_weight"], name: "index_users_on_goal_weight", using: :btree
+  add_index "users", ["max_calories"], name: "index_users_on_max_calories", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["weight"], name: "index_users_on_weight", using: :btree
 
 end

@@ -1,0 +1,9 @@
+--color
+
+# default dots progress bar (rspec default)
+--format progress
+
+
+
+# writing test description, to run without changing default: 'rspec -f d'
+#--format documentation

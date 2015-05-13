@@ -1,1 +1,12 @@
-
+<div ng-controller="DayController">
+<h3>email: {{user.email}}</h3>
+  <div ng-repeat="day in days">
+    <div style="max-width: 14%; height: 225px" class="pull-left red">
+      <p>Day Score: {{day.score}}</p>
+      <p>Exercise: {{day.exercise}}</p>
+      <p>Weight {{day.weight}}</p>
+      <p>Date: {{day.the_date}}</p>
+      <p>Note: {{day.note}}</p>
+    </div>
+  </div>
+</div>

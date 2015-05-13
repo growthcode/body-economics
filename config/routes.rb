@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'pages#index'
 
-  get 'score_summary' => 'days#index', as: :score
+  root 'pages#index'
+  devise_for :users
+
+  get 'score_summary' => 'pages#index', as: :score
 
   resources :days
 

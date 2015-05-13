@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'score_summary' => 'days#index', as: :score
 
+  resources :days
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

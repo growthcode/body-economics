@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150511055016) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "day", force: true do |t|
+  create_table "days", force: true do |t|
     t.integer  "score",      default: 0, null: false
     t.string   "exercise"
     t.integer  "weight"

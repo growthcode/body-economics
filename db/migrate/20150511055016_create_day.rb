@@ -1,6 +1,6 @@
 class CreateDay < ActiveRecord::Migration
   def change
-    create_table :day do |t|
+    create_table :days do |t|
       t.integer :score, null: false, default: 0
       t.string :exercise
       t.integer :weight

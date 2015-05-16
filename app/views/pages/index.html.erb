@@ -1,12 +1,13 @@
 <div ng-controller="DayController">
 <h3>email: {{user.email}}</h3>
   <div ng-repeat="day in days">
-    <div style="max-width: 14%; height: 225px" class="pull-left red">
-      <p>Date: {{day.the_date}}</p>
-      <p>Day Score: {{day.score}}</p>
-      <p>Exercise: {{day.exercise}}</p>
-      <p>Weight {{day.weight}}</p>
-      <p>Note: {{day.note}}</p>
+    <div style="max-width: 14%; height: 300px" class="pull-left red">
+      <p>Date: {{day.the_date}} || Day Score: {{day.score}} || Exercise: {{day.exercise}} || Weight {{day.weight}} || Note: {{day.note}}</p>
+      =======
+      <p>{{pointsPicture(day.score)}}</p>
+      =======<br>
+       <!-- <img ng-src="{{interface == 'UP' && 'green-checkmark.png' || 'big-black-X.png'}}"/> -->
+       <img ng-src="/assets/{{pointsPicture(day.score)}}">
     </div>
   </div>
 </div>

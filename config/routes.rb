@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
   get 'score_summary' => 'pages#index', as: :score
 
-  resources :days
+  resources :days do
+    member do
+      post :update_score
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

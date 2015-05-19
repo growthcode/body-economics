@@ -1,13 +1,16 @@
-<div ng-controller="DayController">
-<h3>email: {{user.email}}</h3>
-  <div ng-repeat="day in days">
-    <div style="max-width: 14%; height: 300px" class="pull-left red">
-      <p>Date: {{day.the_date}} || Day Score: {{day.score}} || Exercise: {{day.exercise}} || Weight {{day.weight}} || Note: {{day.note}}</p>
-      =======
-      <p>{{pointsPicture(day.score)}}</p>
-      =======<br>
-       <!-- <img ng-src="{{interface == 'UP' && 'green-checkmark.png' || 'big-black-X.png'}}"/> -->
-       <img ng-src="/assets/{{pointsPicture(day.score)}}">
+<div ng-controller="DayCtrl">
+  <h3>email: {{user.email}}</h3>
+  <div ng-repeat="day in days | orderBy:'the_date'">
+    <div style="max-width: 14%; height: 400px" class="pull-left red">
+      <div class="text-center">
+        <p>Date: {{day.the_date | filter : day.the_date}} || Day Score: {{day.score}} || Exercise: {{day.exercise}} || Weight {{day.weight}} || Note: {{day.note}}</p>
+        
+        <h2 ng-model="day.score">{{day.score}}</h2>
+
+        <div ng-click="updateScore(day)">
+          <img ng-src="{{pointsPicture(day.score)}}">
+        </div>
+      </div>
     </div>
   </div>
 </div>

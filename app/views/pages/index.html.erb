@@ -4,8 +4,8 @@
     <div style="max-width: 14%; height: 400px" class="pull-left red">
       <div class="text-center">
         <p>Date: {{day.the_date | filter : day.the_date}} || Day Score: {{day.score}} || Exercise: {{day.exercise}} || Weight {{day.weight}} || Note: {{day.note}}</p>
-        
-        <h2 ng-model="day.score">{{day.score}}</h2>
+
+        <h2>{{day.score}}</h2>
 
         <div ng-click="updateScore(day)">
           <img ng-src="{{pointsPicture(day.score)}}">

@@ -10,6 +10,7 @@ bodyEconomics.config(['$httpProvider', function($httpProvider){
 bodyEconomics.controller('DayCtrl', ['$scope', '$http', function($scope, $http){
 
   $scope.days = [];
+
   $http.get('/days')
   .success(function(data){
     $scope.user = data;
@@ -29,15 +30,9 @@ bodyEconomics.controller('DayCtrl', ['$scope', '$http', function($scope, $http){
     // how to create instance method?
     $scope.updateScore = function(day){
       $http.post('/days/' + day.id + '/update_score')
-      // .success(function(data){
-        // for (var i = 0; i < $scope.days.length; i++) {
-        //   if ($scope.days[i].id == day.id) {
-        //     debugger
-        //     $scope.days[i].score = day.score
-        //     // $scope.pointsPicture(day)
-        //   }
-        // }
-      // })
+      .success(function(data){
+        $scope.days = data.day;
+      })
     }
   })
   .error(function(xrh){

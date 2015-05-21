@@ -8,26 +8,16 @@ class DaysController < ApplicationController
   end
 
   def update_score
-    # Day.all do |day|
-    #   if day.score == 1
-    #     day.score = -2
-    #   else
-    #     day.score += 1
-    #   end
-    #   day.save
-    # end
-    score = @day.score
 
-    if score == 1
-      score = -2
+    if @day.score == 1
+      @day.score = -2
     else
-      score += 1
+      @day.score += 1
     end
 
-    @day.score = score
     @day.save
 
-    render json: {day: Day.all}
+    render json: {day: @day}
   end
 
   private

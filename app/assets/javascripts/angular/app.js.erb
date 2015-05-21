@@ -15,27 +15,29 @@ bodyEconomics.controller('DayCtrl', ['$scope', '$http', function($scope, $http){
   .success(function(data){
     $scope.user = data;
     $scope.days = data.days;
-    $scope.pointsPicture = function(score){
-      switch (score) {
-        case 1:
-          return "<%= image_path 'one.png' %>";
-        case 0:
-          return "<%= image_path 'zero.png' %>";
-        case -1:
-          return "<%= image_path 'mOne.png' %>";
-        case -2:
-          return "<%= image_path 'mTwo.png' %>";
-      }
-    }
-    // how to create instance method?
-    $scope.updateScore = function(day){
-      $http.post('/days/' + day.id + '/update_score')
-      .success(function(data){
-        $scope.days = data.day;
-      })
-    }
   })
   .error(function(xrh){
     console.log("in error callback")
   })
+
+  $scope.updateScore = function(day) {
+    $http.post('/days/' + day.id + '/update_score')
+    .success(function(data){
+      console.log("in success update function");
+      day.score = data.day.score
+    })
+  }
+
+  $scope.pointsPicture = function(score){
+    switch (score) {
+      case 1:
+        return "<%= image_path 'one.png' %>";
+      case 0:
+        return "<%= image_path 'zero.png' %>";
+      case -1:
+        return "<%= image_path 'mOne.png' %>";
+      case -2:
+        return "<%= image_path 'mTwo.png' %>";
+    }
+  }
 }])

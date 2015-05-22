@@ -2,15 +2,17 @@
   <h3>email: {{user.email}}</h3>
   <div ng-repeat="day in days | orderBy:'the_date'">
     <div style="max-width: 14%; height: 400px" class="pull-left red">
-      <div class="text-center">
-        <p>Date: {{day.the_date | filter : day.the_date}} || Day Score: {{day.score}} || Exercise: {{day.exercise}} || Weight {{day.weight}} || Note: {{day.note}}</p>
-
-        <h2>{{day.score}}</h2>
-
-        <div ng-click="updateScore(day)">
-          <img ng-src="{{pointsPicture(day.score)}}" >
+      <div class="text-left">
+        <p>{{day.the_date | date : 'EEEE' }}<br>
+          {{day.the_date | date : 'shortDate'}}<br>
+          Weight {{day.weight}}<br>
+          {{day.exercise}}</p>
+          <div class="text-center" ng-click="updateScore(day)">
+            <img ng-src="{{pointsPicture(day.score)}}" >
+          </div>
+          <br>
+          <p>"{{day.note}}"</p>
         </div>
       </div>
     </div>
   </div>
-</div>

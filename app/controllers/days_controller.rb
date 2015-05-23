@@ -9,10 +9,14 @@ class DaysController < ApplicationController
 
   def update_score
 
-    if @day.score == 1
-      @day.score = -2
+    if @day.score == -2
+      @day.score = 1
     else
-      @day.score += 1
+      @day.score -= 1
+    end
+
+    if @day.score > 1 || @day.score < -2
+      @day.score = 0
     end
 
     @day.save

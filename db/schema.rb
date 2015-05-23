@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511055016) do
+ActiveRecord::Schema.define(version: 20150523003737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,48 @@ ActiveRecord::Schema.define(version: 20150511055016) do
     t.integer  "weight"
     t.date     "the_date"
     t.text     "note"
+    t.integer  "kcal_day"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "foods", force: true do |t|
+    t.string   "kind"
+    t.integer  "kcal_per"
+    t.string   "serving_size"
+    t.integer  "meals_ate",    default: 0,     null: false
+    t.integer  "servings_ate", default: 0,     null: false
+    t.boolean  "quickadd",     default: false, null: false
+    t.boolean  "favorite",     default: false, null: false
+    t.boolean  "hidden",       default: false, null: false
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "meals", force: true do |t|
+    t.integer  "kcal_meal"
+    t.time     "mealtime"
+    t.integer  "hunger_lvl"
+    t.text     "note"
+    t.integer  "day_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "servings", force: true do |t|
+    t.integer  "kcal_of_food"
+    t.integer  "serv_num"
+    t.integer  "meal_id"
+    t.integer  "food_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "word"
+    t.integer  "food_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,6 +74,8 @@ ActiveRecord::Schema.define(version: 20150511055016) do
     t.integer  "weight",                 default: 200,  null: false
     t.integer  "goal_weight",            default: 180,  null: false
     t.integer  "max_calories",           default: 1600, null: false
+    t.decimal  "goal_weekly_score"
+    t.string   "sex"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

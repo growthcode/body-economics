@@ -4,15 +4,15 @@
     <div style="max-width: 14%; height: 400px" class="pull-left red">
       <div class="text-left">
         <p>{{day.the_date | date : 'EEEE' }}<br>
-          {{day.the_date | date : 'shortDate'}}<br>
-          Weight {{day.weight}}<br>
-          {{day.exercise}}</p>
-          <div class="text-center" ng-click="updateScore(day)">
-            <img ng-src="{{pointsPicture(day.score)}}" >
-          </div>
-          <br>
-          <p>"{{day.note}}"</p>
+        {{day.the_date | date : 'shortDate'}}<br>
+        Weight {{day.weight}}<br>
+        {{day.exercise}}</p>
+        <div class="text-center" ng-click="updateScore(day)">
+          <img ng-src="{{pointsPicture(day.score)}}" >
         </div>
+        <br>
+        <p>"{{day.note}}"</p>
       </div>
     </div>
   </div>
+</div>

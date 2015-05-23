@@ -20,7 +20,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-@user = User.new(:email => 'asdf@asdf.com', :password => 'asdfasdf', :password_confirmation => 'asdfasdf')
+# @user = User.new(:email => 'asdf@asdf.com', :password => 'asdfasdf', :password_confirmation => 'asdfasdf')
+@user = FactoryGirl.build(:user, email: 'asdf@asdf.com')
 @user.save
 
 counter_28 = 28
@@ -41,4 +42,6 @@ points_array = [0]
   day.save
   puts counter_28 -= 1
 end
+
+
 

@@ -1,76 +1,53 @@
-# Example file of Facotory from old project
-
-# FactoryGirl.define do  factory :background do
-#     image ""
-#   end
+FactoryGirl.define do
 
 
-#   factory :user do
-#     email { Faker::Internet.email }
-#     zipcode { Faker::Address.zip_code }
-#     password "password"
-#     trait :admin do
-#       admin true
-#     end
-#    end
+  factory :user do
+    email { Faker::Internet.email }
+    password { "asdfasdf"}
+    password_confirmation { "asdfasdf"}
+    weight { 200 }
+    goal_weight { 180 }
+    max_calories { 1600 }
+    goal_weekly_score { 2 }
+    sex { "male" }
+  end
 
-# into_words = ["Tickets available from: ", "Through the weekend of: ", "Plates still available for: "]
 
-#   factory :event do
-#     title { Faker::App.name }
-#     date_range { into_words.sample + Faker::Date.forward(180).to_s}
-#     expiration_date { "2016-11-17" }
-#     description { Faker::Lorem.paragraph }
-#     summary { Faker::Lorem.sentence(4) }
-#   end
+  score_array = [1,1,1,1,0,-1,-1,1,1,1,1,0,1,-2]
+  exercise_array = ["cardio", "weight training"]
 
-#   factory :address do
-#     street_address { Faker::Address.street_address }
-#     apartment_number { Faker::Address.secondary_address }
-#     city 'San Francisco'
-#     state 'CA'
-#     zipcode { Faker::Address.zip_code }
-#     driving_instructions { Faker::Lorem.paragraph }
-#   end
+  factory :day do
+    points_today = score_array.sample
+    exer_today = exercise_array.sample
+    score { score_array.sample }
+    exercise { exercise_array.sample }
+    the_date { Date.today }
+    note { "I did #{exer_today} and got a #{points_today} point for the day." }
+    user_id { 1 }
+  end
 
-#   photo_array = [
-#     "test_image_1.jpg",
-#     "test_image_2.jpg",
-#     "test_image_3.jpg",
-#     "test_image_4.jpg",
-#     "test_image_5.jpg",
-#     "test_image_6.jpg"
-#   ]
+  factory :meal do
+    kcal_meal { 1550 }
+    hunger_lvl { 5 }
+    day_id { Day.last.id}
+  end
 
-#   factory :photo do
-#     random_image = photo_array.sample
-#     image { File.new("./app/assets/images/#{random_image}") }
-#     event
-#   end
+  factory :serving do
+    kcal_of_food { 280 }
+    serv_num { 2 }
+    meal_id { Meal.last.id }
+    food_id { Food.first.id }
+  end
 
-#   factory :event_type do
-#     date { rand(1).year.from_now }
-#     cart_description { "March 15th, Dinner @ 7pm" }
-#     price { 100 }
-#     name { "Dinner" }
-#     num_of_tickets { 20 }
-#     tickets_sold { 10 }
-#     event_start { "18:00:00" }
-#   end
+  factory :food do
+    kind { "Chicken Breast" }
+    kcal_per { 140 }
+    serving_size { "4 oz" }
+    user_id { User.first.id }
+  end
 
-#   factory :ticket do
-#     event_id { 1 }
-#     user_id { 1 }
-#   end
-
-#   factory :sold_ticket do
-#     event_id { 1 }
-#     user_id { 1 }
-#     event_type_id { 1 }
-#   end
-
-#   factory :blog do
-#     title { Faker::Lorem.sentence }
-#     body { Faker::Lorem.paragraph }
-#    end
-# end
+  factory :tag do
+    word { "junk" }
+    food_id { Food.first.id }
+  end
+end

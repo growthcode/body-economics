@@ -6,6 +6,7 @@ class CreateDay < ActiveRecord::Migration
       t.integer :weight
       t.date :the_date
       t.text :note
+      t.integer :kcal_day
 
       t.belongs_to :user
       t.timestamps

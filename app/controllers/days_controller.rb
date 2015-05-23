@@ -1,10 +1,13 @@
 class DaysController < ApplicationController
-  before_action :set_day, only: [:update_score]
+  before_action :set_day, only: [:edit, :update_score]
 
   def index
     user = current_user
     jsontest = user.to_json
     render json: user, include: :days
+  end
+
+  def edit
   end
 
   def update_score

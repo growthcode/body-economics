@@ -41,6 +41,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-angular'
 end
 
+#  https://github.com/pitr/angular-rails-templates
+# gem 'angular-rails-templates'
+
 
 
 

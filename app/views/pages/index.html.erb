@@ -1,12 +1,47 @@
+
+<%= render partial: 'component/add_to_meal' %>
+
+<hr>
+<hr>
 <div ng-controller="DayCtrl">
   <h3>email: {{user.email}}</h3>
+  <div class="col-sm-one-seventh hidden-xs red-sm">
+    <b>{{ (days[0].the_date) | date : 'EEEE' }}</b>
+  </div>
+
+  <div class="col-sm-one-seventh hidden-xs red-sm">
+    <b>{{ days[1].the_date | date : 'EEEE' }}</b>
+  </div>
+
+  <div class="col-sm-one-seventh hidden-xs red-sm">
+    <b>{{ days[2].the_date | date : 'EEEE' }}</b>
+  </div>
+
+  <div class="col-sm-one-seventh hidden-xs red-sm">
+    <b>{{ days[3].the_date | date : 'EEEE' }}</b>
+  </div>
+
+  <div class="col-sm-one-seventh hidden-xs red-sm">
+    <b>{{ days[4].the_date | date : 'EEEE' }}</b>
+  </div>
+
+  <div class="col-sm-one-seventh hidden-xs red-sm">
+    <b>{{ days[5].the_date | date : 'EEEE' }}</b>
+  </div>
+
+  <div class="col-sm-one-seventh hidden-xs red-sm">
+    <b>{{ days[6].the_date | date : 'EEEE' }}</b>
+  </div>
+
   <div ng-repeat="day in days | orderBy:'the_date'">
-    <div style="max-width: 14%; height: 400px" class="pull-left red">
+    <div class="col-sm-one-seventh red-sm" style="height: 400px">
       <div class="text-left">
-        <p>{{day.the_date | date : 'EEEE' }}<br>
-        {{day.the_date | date : 'shortDate'}}<br>
-        Weight {{day.weight}}<br>
-        {{day.exercise}}</p>
+        <p>
+          {{day.the_date | date : 'shortDate'}}<br>
+          Weight {{day.weight}}
+          <br>
+          {{day.exercise}}
+        </p>
         <div class="text-center" ng-click="updateScore(day)">
           <img ng-src="{{pointsPicture(day.score)}}" >
         </div>

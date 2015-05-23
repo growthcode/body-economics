@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require angular
-//= require_tree .
+//= require angular/bodyEconomics

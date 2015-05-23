@@ -12,19 +12,22 @@
 
   <%= render partial: "layouts/navbar" %>
 
-  <div class="container">
+  <div class="container blue">
     <div class="row">
-      <div class="col-md-12">
-
-<!--        <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p> -->
-
-         <%= yield %>
-
+      <%= yield %>
+      <hr>
+      <hr>
+      <hr>
+      <div class="col-xs-12">
+        <div class="view-container green-md">
+          <div ng-view class="view-frame animate-view">
+          </div>
+        </div>
       </div>
+      <hr>
     </div>
   </div>
-<br>
-<br>
+  <br>
+  <br>
 </body>
 </html>

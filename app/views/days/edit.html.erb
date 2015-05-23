@@ -1,0 +1,27 @@
+<%= @day.inspect %>
+<hr>
+
+<div class="col-md-12">
+  <h2>Update Day</h2>
+
+  <form name="dayEdit" novalidate>
+    <div class="well">
+      <select ng-model="day" convert-to-number>
+        <option value="1">1</option>
+        <option value="0">0</option>
+        <option value="-1">-1</option>
+        <option value="-2">-2</option>
+      </select>
+    </div>
+  </form>
+
+</div>
+t.integer  "score",      default: 0, null: false
+t.string   "exercise"
+t.integer  "weight"
+t.date     "the_date"
+t.text     "note"
+t.integer  "kcal_day"
+t.integer  "user_id"
+t.datetime "created_at"
+t.datetime "updated_at"

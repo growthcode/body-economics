@@ -7,6 +7,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.integer :weight, null: false, default: 200
       t.integer :goal_weight, null: false, default: 180
       t.integer :max_calories, null: false, default: 1600
+      t.decimal :goal_weekly_score
+      t.string :sex
 
       ## Recoverable
       t.string   :reset_password_token

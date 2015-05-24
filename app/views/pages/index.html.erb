@@ -1,9 +1,26 @@
-
-<%= render partial: 'component/add_to_meal' %>
-
-<hr>
-<hr>
 <div ng-controller="DayCtrl">
+  <div class="row">
+    <div class="col-md-6">
+      <p class="input-group">
+        <input type="date" class="form-control" datepicker-popup ng-model="days[0].the_date" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <pre>Selected date is: <em>{{days[0].the_date | date:'fullDate' }}</em></pre><br>
+    </div>
+    <div class="col-sm-6">
+      <%= render partial: 'component/day_summary' %>
+    </div>
+    <div class="col-sm-6">
+      <%= render partial: 'component/add_to_meal', locals: {meal: @meal} %>
+    </div>
+  </div>
+
+  <hr>
+  <hr>
   <h3>email: {{user.email}}</h3>
   <div class="col-sm-one-seventh hidden-xs red-sm">
     <b>{{ (days[0].the_date) | date : 'EEEE' }}</b>

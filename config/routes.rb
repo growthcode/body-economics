@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :days do
     member do
+      post :new_meal, as: :new_meal
       post :update_score
     end
   end

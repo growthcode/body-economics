@@ -38,7 +38,6 @@ gem 'spring',        group: :development
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap'
-  gem 'rails-assets-angular'
 end
 
 #  https://github.com/pitr/angular-rails-templates

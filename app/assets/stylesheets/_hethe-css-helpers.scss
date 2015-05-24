@@ -1,0 +1,80 @@
+$outline-sm: 1px;
+$outline-md: 3px;
+$outline-lg: 5px;
+
+// css helpers
+.red-sm {
+  outline: $outline-sm solid red;
+}
+.red-md {
+  outline: $outline-md solid red;
+}
+.red-lg {
+  outline: $outline-lg solid red;
+}
+.red-sm-dashed {
+  outline: $outline-sm dashed red;
+}
+.red-md-dashed {
+  outline: $outline-md dashed red;
+}
+.red-lg-dashed {
+  outline: $outline-lg dashed red;
+}
+
+.blue-sm {
+  outline: $outline-sm solid blue;
+}
+.blue-md {
+  outline: $outline-md solid blue;
+}
+.blue-lg {
+  outline: $outline-lg solid blue;
+}
+.blue-sm-dashed {
+  outline: $outline-sm solid blue;
+}
+.blue-md-dashed {
+  outline: $outline-md solid blue;
+}
+.blue-lg-dashed {
+  outline: $outline-lg solid blue;
+}
+
+.green-sm {
+  outline: $outline-sm solid green;
+}
+.green-md {
+  outline: $outline-md solid green;
+}
+.green-lg {
+  outline: $outline-lg solid green;
+}
+.green-sm-dashed {
+  outline: $outline-sm dashed green;
+}
+.green-md-dashed {
+  outline: $outline-md dashed green;
+}
+.green-lg-dashed {
+  outline: $outline-lg dashed green;
+}
+
+.orange-sm{
+  outline: $outline-sm solid orange;
+}
+.orange-md {
+  outline: $outline-md solid orange;
+}
+.orange-lg {
+  outline: $outline-lg solid orange;
+}
+.orange-sm-dashed {
+  outline: $outline-sm dashed orange;
+}
+.orange-md-dashed {
+  outline: $outline-md dashed orange;
+}
+.orange-lg-dashed {
+  outline: $outline-lg dashed orange;
+}

@@ -10,6 +10,10 @@ class DaysController < ApplicationController
   def edit
   end
 
+  def new_meal
+    binding.pry
+  end
+
   def update_score
 
     if @day.score == -2

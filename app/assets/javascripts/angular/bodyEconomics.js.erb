@@ -1,4 +1,4 @@
-var bodyEconomics = angular.module('bodyEconomics', []);
+var bodyEconomics = angular.module('bodyEconomics', ["ngResource", 'ui.bootstrap']);
 
 bodyEconomics.config(['$httpProvider', function($httpProvider){
   // read CSRF token
@@ -7,7 +7,7 @@ bodyEconomics.config(['$httpProvider', function($httpProvider){
   $httpProvider.defaults.headers.common['X-CSRF-TOKEN'] = token
 }]);
 
-bodyEconomics.controller('DayCtrl', ['$scope', '$http', function($scope, $http){
+bodyEconomics.controller('DayCtrl', ['$scope', '$http', '$resource', function($scope, $http, $resource){
 
   $scope.days = [];
 
@@ -28,3 +28,11 @@ bodyEconomics.controller('DayCtrl', ['$scope', '$http', function($scope, $http){
     })
   }
 }]);
+
+// bodyEconomics.factory('Meals', ['$resource', function($resource) {
+    // return $resource('/api/screencasts/:id', {
+      // id: '@id'
+    // });
+  // }
+// ]);
+

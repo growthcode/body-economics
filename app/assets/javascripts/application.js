@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require angular
+//= require angular/angular
+//= require angular/services/angular-resource
+//= require angular/services/ui-bootstrap-tpls-0.13.0
 //= require angular/bodyEconomics

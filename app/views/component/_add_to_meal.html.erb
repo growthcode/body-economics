@@ -1,0 +1,36 @@
+<h3>Record New Meal:</h3>
+
+<%#= form_for(@meal), new_meal_day_path do |f| %>
+  <div class="input-group">
+    <input class="form-control" type="password" placeholder="Food">
+    <%#= f.text_field :test, placeholder: test %>
+    <span class="input-group-addon"><i class="fa fa-plus-circle fa-fw fa-lg"></i></span>
+  </div>
+  <%#= f.submit %>
+<%# end %>
+
+
+<br>
+<div class="panel panel-warning">
+  <div class="panel-heading">#New : TIME STAMP : Meal Calories</div>
+  <div class="panel-body">
+    <table class="list-group table">
+      <thead>
+        <tr>
+          <th>Food</th>
+          <th>Kcal</th>
+          <th>Servings</th>
+          <th>Calories</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chicken</td>
+          <td>140</td>
+          <td>3</td>
+          <td>420</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

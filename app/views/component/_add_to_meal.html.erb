@@ -1,13 +1,13 @@
 <h3>Record New Meal:</h3>
 
-<%#= form_for(@meal), new_meal_day_path do |f| %>
+<%= form_for(@meal), new_meal_day_path do |f| %>
   <div class="input-group">
     <input class="form-control" type="password" placeholder="Food">
-    <%#= f.text_field :test, placeholder: test %>
+    <%= f.text_field :test, placeholder: test %>
     <span class="input-group-addon"><i class="fa fa-plus-circle fa-fw fa-lg"></i></span>
   </div>
-  <%#= f.submit %>
-<%# end %>
+  <%= f.submit %>
+<% end %>
 
 
 <br>
